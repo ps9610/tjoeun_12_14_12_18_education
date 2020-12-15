@@ -74,6 +74,11 @@
 #main #section01 .slide-container .slide-view .slide-wrap .slide1 > div {width:100%;height:100%;overflow:hidden;background:url(../img/slide01.jpg) no-repeat 50% 0;background-size:100% 100%;}
 #main #section01 .slide-container .slide-view .slide-wrap .slide2 > div {width:100%;height:100%;overflow:hidden;background:url(../img/slide02.jpg) no-repeat 50% 0;background-size:cover;}
 #main #section01 .slide-container .slide-view .slide-wrap .slide3 > div {width:100%;height:100%;overflow:hidden;background:url(../img/slide03.jpg) no-repeat 50% 0;background-size:cover;}
+#main #section01 .pageBtn-wrap {z-index:3;position:absolute;bottom:40px;width:100%;height:3px;}
+#main #section01 .pageBtn-wrap ul {text-align:center;height:100%;width:100%;}
+#main #section01 .pageBtn-wrap ul li {width:150px;height:100%;display:inline-block;margin:0 5px;}
+#main #section01 .pageBtn-wrap ul li a {display:block;height:100%;width:100%;background:rgba(255,255,255,.3);}
+#main #section01 .pageBtn-wrap ul li a.addPage {background:rgba(255,255,255,.9);}
 
 #main #section01 .hungry {z-index:3;position:absolute;display:inline-block;top:382px;width:100%;text-align:center;}/* 높이 잡으면 여기 박스도 반응형으로 만들어야되니까 높이X */
 #main #section01 .hungry > img {width:100%;max-width:542px;}/* max(min)-width ; 반응형할 때 많이 씀, hungry자체가 넓이 100%니까 max가 되는거임*/
