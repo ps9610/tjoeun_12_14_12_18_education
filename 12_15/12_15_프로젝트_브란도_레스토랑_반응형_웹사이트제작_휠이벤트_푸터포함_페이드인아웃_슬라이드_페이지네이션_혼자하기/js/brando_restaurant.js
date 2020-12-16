@@ -225,29 +225,43 @@
                 setId = setInterval(nextCountFn,4000);
             }
             //메인 NEXT 슬라이드
+            //페이지 버튼 클릭해서 전달되는 번호가 2개
+            //한개는 이전(현재 실행중이였던) 번호가 있어야 되고
+            //또 한개는 지금 현재 클릭한 번호
             function mainNextSlideFn(){
+                console.log("cnt",cnt);
+                console.log("imsi",imsi);
+                console.log("setId",setId);
+                console.log("setId2",setId2);
+                //현재 슬라이드/ex:첫번째
                 slide.css({ zIndex:1 });
                 if( imsi !== null ){
-                    slide.eq(imsi).css({zIndex:2});
+                    //페이지 버튼 클릭 시 실행할 구문 예)현재 실행중인게 첫번째였으면 imsi = 0;
+                    slide.eq(imsi).css({zIndex:2}); //내가 클릭했을때만 실행됨
                 }
                 else{
-                    slide.eq(cnt==0? n:cnt-1).css({ zIndex:2 });
+                    slide.eq(cnt==0? n:cnt-1).css({ zIndex:2 }); //평소 실행되는 것
                 }
+                //다음 슬라이드/ex:두번째
                 slide.eq(cnt).css({ zIndex:3 }).stop().animate({opacity:0},0).animate({opacity:1},800);
-                pageBtnEventFn();
+
+                pageBtnEventFn(); //페이지 버튼 이벤트 함수
+                //console.log("next",cnt);
                 }
 
             //메인 PREV 슬라이드
             function mainPrevSlideFn(){
                 slide.css({ zIndex:1 }).stop().animate({opacity:1},0);
-                slide.eq(cnt).css({ zIndex:2 });
+                slide.eq(cnt).css({ zIndex:2 });//내가클릭한거
+                //현재실행중/얘가없어지고내가클릭한게보임
                 if(imsi !== null){
                     slide.eq(imsi).css({ zIndex:3 }).stop().animate({opacity:1},0).animate({opacity:0},800);
                 }
                 else{
                     slide.eq(cnt==n? 0:cnt+1).css({ zIndex:3 }).stop().animate({opacity:1},0).animate({opacity:0},800);
                 }
-                pageBtnEventFn();
+                pageBtnEventFn(); //페이지 버튼 이벤트 함수
+                //console.log("prev",cnt);
                 }
 
             //PREV 슬라이드
@@ -291,35 +305,52 @@
             $(".pageBtn").each(function(idx){
                 $(this).on({
                     click:function(){
-                        console.log("내가 클릭한=이동하고자하는 번호", idx); //클릭
-                        console.log("현재 슬라이드 번호", cnt); //현재
+                        console.log("내가 클릭한=이동하고자하는 번호", idx); //클릭=이동하고자 하느 슬라이드 번호
+                        console.log("현재 슬라이드 번호", cnt); //현재 슬라이드 번호
                         
-                        imsi = cnt; 
-                        cnt = idx;
+
+                        // 클릭한 페이지 번호와 현재 실행 중인 슬라이드 번호 비교해서
+                        // 현재 슬라이드보다 클릭한 번호가 더 크면? 다음 슬라이드 메인함수
+                        // 현재 슬라이드보다 클릭한 번호가 더 작으면? 이전 슬라이드 메인함수
+                        /*
+                        if( cnt<idx ){ //내가 클릭한게 더 크면 = 다음 슬라이드 메인함수
+                            cnt = idx;
+                            mainNextSlideFn();
+                        }
+                        else if( cnt>idx ){ //내가 클릭한게 더 작으면 = 이전 슬라이드 메인함수/else 쓰면 cnt=idx도 나와서 안됨(if쓰던가)
+                            cnt = idx;
+                            mainPrevSlideFn();
+                        }
+                        */
+
+                        //만약에 cnt = idx;를 밖으로 빼줄려면 
+                        imsi = cnt; // 임시에 cnt를 먼저 기억을 시켜 = 현재 실행중인 슬라이드를 임시 기억시킨다는 것
+                        cnt = idx; // 클릭한 번호 = 이동하고자 하는 번호
                         if ( imsi < idx ){ //다음
                             mainNextSlideFn();
                         }
                         else if( imsi > idx ){ //이전
                             mainPrevSlideFn();
                         }
-                        timerControlFn(); // 타이머
+                        timerControlFn(); // 타이머 함수실행
                     }
                 })
             })
 
-            //타이머
+            //타이머 제어 함수
+            //터치하거나 페이지 버튼 클릭 시 타이머 제어 함수 실행
             function timerControlFn(){
                 var tCnt = 0;
                 clearInterval(setId);
                 clearInterval(setId2);
-                setId2 = setInterval(function(){ 
+                setId2 = setInterval(function(){ //정지하고나서 몇 초간 정지했는지 카운트실행
                     tCnt++;
                     console.log(tCnt);
                     if( tCnt >= 5 ){
-                        imsi = null;
+                        imsi = null; // 페이지 버튼 클릭 이전 상태로 초기화 반드시
                         nextCountFn();
                         autoPlayInit();
-                        clearInterval(setId);
+                        clearInterval(setId); // 혹시 몰라서 또 멈춰준거 = 버블링 방지 = 완벽 방지
                         clearInterval(setId2);
                     }
                 },1000);
