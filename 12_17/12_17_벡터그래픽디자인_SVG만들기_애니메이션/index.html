@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>벡터그래픽디자인 | SVG | 애니메이션</title>
+    <title>SVG 애니메이션</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=Emulate10"> -->
@@ -55,18 +55,188 @@
  
 </head>
 <body>
+    <!-- 벡터그래픽디자인을하는데 손으로직접만드는과정임 -->
     <div id="wrap">
         <div id="svgWrap">
-            <ul>
+            <ul class="svg-theme svg-theme1">
                 <li>
                     <div>
-                        <!-- svg는 단독태그 -->
+                        <!-- svg는 단독태그 
+                            넓이,높이안써주면반지름만큼만 생성됨-->
                         <svg class="svg-1" width="300" height="300">
                             <!-- 원형을 그릴거임/fill:배경색/stroke:테두리/
                                 원을 정중앙에 놓기위해선 센터좌표를정해주면됨/
-                                cx:x축중앙좌표/cy:y축중앙좌표/r=반지름 
-                                선 테두리 두께를 정해주었다면 반드시반지름에서 그 값만큼 빼줄것-->
-                            <circle fill="#99c" stroke="#c9c" scroke-width="5" cx="150" cy="150" r="145"></circle> 
+                                cx:x축중앙좌표/cy:y축중앙좌표/r=반지름
+                                만약 타원형이면 r이 아니고 rx를 사용
+                                선 테두리 두께를 정해주었다면 반드시반지름에서 그 값의 반만큼 빼줄것
+                                일단 안 빼고 밑에꺼랑 비교해봐/지금꺼는 찌그러짐-->
+                            <circle fill="#99c" stroke="#c9c" stroke-width="10" cx="150" cy="150" r="150"></circle> 
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="300" height="300">
+                            <!--원의 테두리값의 1/2만큼 빼준것-->
+                            <circle fill="#99c" stroke="#c9c" stroke-width="10" cx="150" cy="150" r="145"></circle> 
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="300" height="300">
+                            <!--원의 테두리값의 1/2만큼 빼준것
+                                배경은투명/none은 투명색!!!/뒤가 비침/테두리색을채워줌-->
+                            <circle fill="none" stroke="#39c" stroke-width="10" cx="150" cy="150" r="145"></circle> 
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="300" height="300">
+                            <!-- 테두리는투명/배경색을 채웠을 때 -->
+                            <circle fill="#39c" stroke="none" cx="150" cy="150" r="150"></circle> 
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+            <ul class="svg-theme svg-theme2">
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%" viewBox="0 0 300 300">
+                            <!-- viewBox는 반응형!! 화면 줄이면 너비높이 자동으로 조정됨
+                                css에서 너비를 조정해도 html에서 width를 100%로 해놓았기 때문에
+                                알아서 자동으로 크기 조정됨 -->
+                            <circle fill="#99c" stroke="#c9c" stroke-width="10" cx="150" cy="150" r="150"></circle> 
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%" viewBox="0 0 300 300">
+                            <circle fill="#99c" stroke="#c9c" stroke-width="10" cx="150" cy="150" r="145"></circle> 
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%" viewBox="0 0 300 300">
+                            <circle fill="none" stroke="#39c" stroke-width="10" cx="150" cy="150" r="145"></circle> 
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%"  viewBox="0 0 300 300">
+                            <circle fill="#39c" stroke="none" cx="150" cy="150" r="150"></circle> 
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+            <ul class="svg-theme svg-theme3">
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%" viewBox="0 0 300 200">
+                            <!-- 타원형은 너비를 높이보다 많게 하고 cy 조정 + r을 rx,ry로
+                                여기선 한 번 짤리게 해봄 -->
+                            <ellipse fill="#99c" stroke="#c9c" stroke-width="10" cx="150" cy="100" rx="150" ry="100">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%" viewBox="0 0 300 200">
+                            <!-- 이게 딱 맞는거 -->
+                            <ellipse fill="#99c" stroke="#c9c" stroke-width="10" cx="150" cy="100" rx="145" ry="95">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%" viewBox="0 0 300 200">
+                            <!-- 딱 맞는데 배경 투명하게  보이기 -->
+                            <ellipse fill="none" stroke="#39c" stroke-width="10" cx="150" cy="100" rx="145" ry="95">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%"  viewBox="0 0 300 200">
+                            <!-- 테두리 없으니까 rx와 ry가 cx와 cy랑 같음 -->
+                            <ellipse fill="#39c" stroke="none" cx="150" cy="100" rx="150" ry="100">
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+            <ul class="svg-theme svg-theme4">
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%" viewBox="0 0 200 300">
+                            <!-- 타원형은 너비를 높이보다 많게 하고 cy 조정 + r을 rx,ry로
+                                여기선 한 번 짤리게 해봄 -->
+                            <ellipse fill="#99c" stroke="#c9c" stroke-width="10" cx="100" cy="150" rx="100" ry="150">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%" viewBox="0 0 200 300">
+                            <!-- 이게 딱 맞는거 -->
+                            <ellipse fill="#99c" stroke="#c9c" stroke-width="10" cx="100" cy="150" rx="95" ry="145">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%" viewBox="0 0 200 300">
+                            <!-- 딱 맞는데 배경 투명하게  보이기 -->
+                            <ellipse fill="none" stroke="#39c" stroke-width="10" cx="100" cy="150" rx="95" ry="145">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%"  viewBox="0 0 200 300">
+                            <!-- 테두리 없으니까 rx와 ry가 cx와 cy랑 같음 -->
+                            <ellipse fill="#39c" stroke="none" cx="100" cy="150" rx="100" ry="150">
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+            <ul class="svg-theme svg-theme5">
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%" viewBox="0 0 300 300">
+                            <!-- 사각형은 센터에서 시작할 필요 업고 가로세로만 있으면 돼서 xy만 써줌 -->
+                            <!-- x="0"왼쪽 y="0"바닥에서시작
+                                지금은 테두리 두께가 5px씩 짤림 -->
+                            <rect fill="#c99" stroke="#b9b9b9" stroke-width="10" x="0" y="0" width="300" height="300">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%" viewBox="0 0 300 300">
+                            <!-- 사각형은 테두리를 포함해서 테두리만큼 빼주면
+                            x,y를 테두리반값만큼 옮겨주고 너비랑 높이이를 테두리너비만큼 빼줌
+                            그럼 테두리 두께 10px이 다 보임-->
+                            <rect fill="#c99" stroke="#b9b9b9" stroke-width="10" x="5" y="5" width="290" height="290">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%" viewBox="0 0 300 300">
+                            <!-- 테두리 없는 버전 -->
+                            <rect fill="#c99" stroke="none" x="0" y="0" width="300" height="300">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <svg class="svg-1" width="100%" viewBox="0 0 300 300">
+                            <!-- 테두리가없는데 너비를 작게하면 viewBox가 기준이기 때문에 뒷면보임 -->
+                            <rect fill="#c99" stroke="none" x="50" y="50" width="200" height="200">
                         </svg>
                     </div>
                 </li>

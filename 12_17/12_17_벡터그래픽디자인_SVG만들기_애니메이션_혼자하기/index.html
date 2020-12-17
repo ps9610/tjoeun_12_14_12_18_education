@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>Mouse Wheel Event</title>
+    <title>SVG 애니메이션</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=Emulate10"> -->
@@ -9,7 +9,7 @@
     <!-- initial-scale=1.0 :초기값 minimum-scale=1.0:본래 사이즈보다 줄이지 못하게, maximum-scale=1.6: 본래크기보다 1.6배만 크게, user-scalable=no:폼 요소 선택(포커스) 시 확대 현상을 제거 (사용자가 손가락으로 확대못하게함) -->
     <meta name="Title" content="Brando Restaurant">
     <meta name="Publisher" content="프론트엔드 박소혜">
-    <meta name="Author-date" content="2020-12-15"> 
+    <meta name="Author-date" content="2020-12-17"> 
     <meta name="Author" content="Brando">
     <meta name="Copyright" content="Brando">
     <meta name="Keywords" content="Brando, 웹표준,웹접근성,Bransdo Restaurant, Brando 반응형 웹사이트">
@@ -55,21 +55,145 @@
  
 </head>
 <body>
-    <header></header>
-    <main id="wrap">
-        <!-- 각 섹션의 폰트가 가로 세로 높이까지 창에 가득차게, 반응형으로 -->
-        <section id="section01" class="section">section01</section> 
-        <section id="section02" class="section">section02</section>
-        <section id="section03" class="section">section03</section>
-        <section id="section04" class="section">section04</section>
-        <section id="section05" class="section">section05</section>
-        <section id="section06" class="section">section06</section>
-        <section id="section07" class="section">section07</section>
-        <section id="section08" class="section">section08</section>
-        <section id="section09" class="section">section09</section>
-        <section id="section10" class="section">section10</section>
-    </main>
-    <footer id="footer" class="section">footer</footer>
-    <script src="./js/mouseWheelEvent.js"></script>
+    <div id="wrap">
+        <div id="svgWrap">
+            <ul class="svgTheme1 svgTheme">
+                <li>
+                    <div>
+                        <h2>원형 테두리 잘림</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 300 300">
+                            <circle fill="#e99" stroke="#99e" stroke-width="10" cx="150" cy="150" r="150">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>원형 테두리 안 잘림</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 300 300">
+                            <circle fill="#e99" stroke="#99e" stroke-width="10" cx="150" cy="150" r="145">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>원형 테두리 안 잘리고 배경 투명</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 300 300">
+                            <circle fill="none" stroke="#99e" stroke-width="10" cx="150" cy="150" r="145">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>모양 유지하면서 원형 테두리 투명</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 300 300">
+                            <circle fill="#e99" stroke="none" cx="150" cy="150" r="150">
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+            <ul class="svgTheme2 svgTheme">
+                <li>
+                    <div>
+                        <h2>타원형(세로) 테두리 잘림</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 100 200">
+                            <ellipse fill="#e99" stroke="#99e" stroke-width="10" cx="50" cy="100" rx="50" ry="100">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>타원형(세로) 테두리 안 잘림</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 100 200">
+                            <ellipse fill="#e99" stroke="#99e" stroke-width="10" cx="50" cy="100" rx="45" ry="95">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>타원형(세로) 테두리 안 잘리고 배경 투명</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 100 200">
+                            <ellipse fill="none" stroke="#99e" stroke-width="10" cx="50" cy="100" rx="45" ry="95">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>모양 유지하면서 타원형(세로) 테두리 투명</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 100 200">
+                            <ellipse fill="#e99" stroke="none" cx="50" cy="100" rx="50" ry="100">
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+            <ul class="svgTheme3 svgTheme">
+                <li>
+                    <div>
+                        <h2>타원형(가로) 테두리 잘림</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 200 100">
+                            <ellipse fill="#e99" stroke="#99e" stroke-width="10" cx="100" cy="50" rx="100" ry="50">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>타원형(가로) 테두리 안 잘림</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 200 100">
+                            <ellipse fill="#e99" stroke="#99e" stroke-width="10" cx="100" cy="50" rx="95" ry="45">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>타원형(가로) 테두리 안 잘리고 배경 투명</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 200 100">
+                            <ellipse fill="none" stroke="#99e" stroke-width="10" cx="100" cy="50" rx="98" ry="45">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>모양 유지하면서 타원형(가로) 테두리 투명</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 200 100">
+                            <ellipse fill="#e99" stroke="none" cx="100" cy="50" rx="100" ry="50">
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+            <ul class="svgTheme4 svgTheme">
+                <li>
+                    <div>
+                        <h2>사각형 테두리 잘림</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 200 200">
+                            <rect fill="#e99" stroke="#99e" stroke-width="10" x="0" y="0" width="200" height="200"> 
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>사각형 테두리 안 잘림</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 200 200">
+                            <rect fill="#e99" stroke="#99e" stroke-width="10" x="5" y="5" width="190" height="190">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>사각형 테두리 안 잘리고 배경 투명</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 200 200">
+                            <rect fill="none" stroke="#99e" stroke-width="10" x="5" y="5" width="190" height="190">
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>모양 유지하면서 사각형 테두리 투명</h2>
+                        <svg class="svg1" width="100%" viewBox="0 0 200 200">
+                            <rect fill="#e99" stroke="none" x="0" y="0" width="200" height="200">
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,16 +1,12 @@
 @charset "UTF-8";
 
-#wrap {width:100%;}
-                            /* 줄 높이가 창 높이를 결정 */
-#wrap .section {width:100%;line-height:969px;font-size:150px;text-transform:uppercase;text-align:center;}
-#wrap #section01 {background:rgba(200,50,50,.7);}
-#wrap #section02 {background:rgba(200,200,50,.7);}
-#wrap #section03 {background:rgba(50,50,200,.7);}
-#wrap #section04 {background:rgba(200,50,200,.7);}
-#wrap #section05 {background:rgba(200,200,200,.7);}
-#wrap #section06 {background:rgba(50,200,50,.7);}
-#wrap #section07 {background:rgba(200,50,50,.7);}
-#wrap #section08 {background:rgba(200,200,50,.7);}
-#wrap #section09 {background:rgba(50,200,200,.7);}
-#wrap #section10 {background:rgba(50,200,50,.7);}
-#footer {background:rgba(200,50,200,.7);}
+#wrap {width:100%;background:#fff;}
+#wrap #svgWrap {width:100%;padding:100px 0;}
+#wrap #svgWrap > ul {width:100%;margin:50px 0;}
+#wrap #svgWrap > ul:after {content:"";display:block;clear:both;}
+#wrap #svgWrap > ul > li {float:left;width:25%;text-align:center;}
+#wrap #svgWrap > ul > li > div {border:1px solid #c00;display:inline-block;background:#39c;box-sizing:border-box;}
+
+#wrap #svgWrap > ul.svg-theme2 > li > div {width:100%;padding:30px;background:none;}
+#wrap #svgWrap > ul.svg-theme3 > li > div {width:90%;padding:30px;background:none;}
+#wrap #svgWrap > ul.svg-theme4 > li > div {width:50%;padding:30px;background:none;}
