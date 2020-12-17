@@ -5,7 +5,7 @@
             var that=this;
 
                 that.headerFn();
-                //that.section01Fn();
+                that.section01Fn();
                 that.section234Fn();
                 /* 
                 that.section234Fn(); 
@@ -233,19 +233,19 @@
                 else{
                     slide.eq(cnt==0? n:cnt-1).css({ zIndex:2 });
                 }
-                slide.eq(cnt).css({ zIndex:3 }).stop().animate({opacity:0},0).animate({opacity:1},800);
+                slide.eq(cnt).css({ zIndex:3 }).find("li").stop().animate({width:0},0).animate({width:25+"%"},1200);
                 pageBtnEventFn();
                 }
 
             //메인 PREV 슬라이드
             function mainPrevSlideFn(){
-                slide.css({ zIndex:1 }).stop().animate({opacity:1},0);
+                slide.css({ zIndex:1 }).find("li").stop().animate({width:25+"%"},0);
                 slide.eq(cnt).css({ zIndex:2 });
                 if(imsi !== null){
-                    slide.eq(imsi).css({ zIndex:3 }).stop().animate({opacity:1},0).animate({opacity:0},800);
+                    slide.eq(imsi).css({ zIndex:3 }).find("li").stop().animate({width:25+"%"},0).animate({width:0},1200);
                 }
                 else{
-                    slide.eq(cnt==n? 0:cnt+1).css({ zIndex:3 }).stop().animate({opacity:1},0).animate({opacity:0},800);
+                    slide.eq(cnt==n? 0:cnt+1).css({ zIndex:3 }).find("li").stop().animate({width:25+"%"},0).animate({width:0},1200);
                 }
                 pageBtnEventFn();
                 }
