@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>벡터그래픽디자인 | SVG | 애니메이션</title>
+    <title>Mouse Wheel Event</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=Emulate10"> -->
@@ -9,7 +9,7 @@
     <!-- initial-scale=1.0 :초기값 minimum-scale=1.0:본래 사이즈보다 줄이지 못하게, maximum-scale=1.6: 본래크기보다 1.6배만 크게, user-scalable=no:폼 요소 선택(포커스) 시 확대 현상을 제거 (사용자가 손가락으로 확대못하게함) -->
     <meta name="Title" content="Brando Restaurant">
     <meta name="Publisher" content="프론트엔드 박소혜">
-    <meta name="Author-date" content="2020-12-17"> 
+    <meta name="Author-date" content="2020-12-15"> 
     <meta name="Author" content="Brando">
     <meta name="Copyright" content="Brando">
     <meta name="Keywords" content="Brando, 웹표준,웹접근성,Bransdo Restaurant, Brando 반응형 웹사이트">
@@ -55,23 +55,21 @@
  
 </head>
 <body>
-    <div id="wrap">
-        <div id="svgWrap">
-            <ul>
-                <li>
-                    <div>
-                        <!-- svg는 단독태그 -->
-                        <svg class="svg-1" width="300" height="300">
-                            <!-- 원형을 그릴거임/fill:배경색/stroke:테두리/
-                                원을 정중앙에 놓기위해선 센터좌표를정해주면됨/
-                                cx:x축중앙좌표/cy:y축중앙좌표/r=반지름 
-                                선 테두리 두께를 정해주었다면 반드시반지름에서 그 값만큼 빼줄것-->
-                            <circle fill="#99c" stroke="#c9c" scroke-width="5" cx="150" cy="150" r="145"></circle> 
-                        </svg>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <header></header>
+    <main id="wrap">
+        <!-- 각 섹션의 폰트가 가로 세로 높이까지 창에 가득차게, 반응형으로 -->
+        <section id="section01" class="section">section01</section> 
+        <section id="section02" class="section">section02</section>
+        <section id="section03" class="section">section03</section>
+        <section id="section04" class="section">section04</section>
+        <section id="section05" class="section">section05</section>
+        <section id="section06" class="section">section06</section>
+        <section id="section07" class="section">section07</section>
+        <section id="section08" class="section">section08</section>
+        <section id="section09" class="section">section09</section>
+        <section id="section10" class="section">section10</section>
+    </main>
+    <footer id="footer" class="section">footer</footer>
+    <script src="./js/mouseWheelEvent.js"></script>
 </body>
 </html>
