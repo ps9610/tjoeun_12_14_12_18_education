@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+#wrap {width:100%;}
+#wrap .circle-wrap {width:100%;max-width:500px;height:auto;margin:100px auto;}
+#wrap .circle-wrap .gap {margin:10%;}
+#wrap .circle-wrap .gap .title {padding-bottom:70px;text-align:center;}
+#wrap .circle-wrap .gap .title h2 {letter-spacing:1.5px;display:inline-block;font-size:40px;padding-bottom:5px;border-bottom:1px solid #aaa;}
+#wrap .circle-wrap .gap .title h2 i {color:#c77;font-weight:600;}
+#wrap .circle-wrap .gap .content {position:relative;width:100%;}
+#wrap .circle-wrap .gap .content svg {position:absolute;top:0;left:0;width:100%;height:auto;}
+#wrap .circle-wrap .gap .content .bg    {position:relative;z-index:1;opacity:0.05;}
+#wrap .circle-wrap .gap .content .front {z-index:2;}

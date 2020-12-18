@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+#wrap {width:100%;background:#fff;}
+#wrap .circle-wrap {position:relative;width:100%;max-width:500px;height:auto;margin:100px auto;}
+#wrap .circle-wrap svg    {top:0;left:0;width:100%;height:auto;}
+#wrap .circle-wrap .front {position:relative;z-index:2;}
+#wrap .circle-wrap .bg    {position:absolute;z-index:1;}
