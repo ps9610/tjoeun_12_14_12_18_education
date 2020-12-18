@@ -17,8 +17,8 @@
             obj.style.strokeDasharray = totLength; //getTotalLength로 Dash~의 공간을 채워라
             obj.style.strokeDashoffset = totLength; //getTotalLength로 Dash~의 공간을 채워라
 
-            $(obj).animate({strokeDashoffset:totLength*(1-1)},3000,function(){ // 채우고 다 채우면
-                $(obj).animate({strokeDashoffset:totLength},1000) // 지워라
+            $(obj).animate({strokeDasharray:0, strokeDashoffset:0},3000,function(){ // 채우고 다 채우면
+                $(obj).animate({strokeDasharray:totLength, strokeDashoffset:totLength},1000) // 지워라
             });
 
 

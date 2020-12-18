@@ -7,6 +7,8 @@
 #wrap .circle-wrap .gap .title h2 {letter-spacing:1.5px;display:inline-block;font-size:40px;padding-bottom:5px;border-bottom:1px solid #aaa;}
 #wrap .circle-wrap .gap .title h2 i {color:#c77;font-size:50px;}
 #wrap .circle-wrap .content {position:relative;width:100%;}
-#wrap .circle-wrap .content svg {position:absolute;top:0;left:0;width:100%;height:auto;}
+#wrap .circle-wrap .content svg {position:absolute;top:0;left:0;width:100%;height:auto;transform:rotate(-90deg);}
 #wrap .circle-wrap .content .front {position:relative;z-index:2;}
 #wrap .circle-wrap .content .bg    {z-index:1;opacity:0.05;}
+#wrap .circle-wrap .content .num   {z-index:3;position:absolute;top:50%;margin-top:-50px;left:0;width:100%;text-align:center;}
+#wrap .circle-wrap .content .num h2 {font-size:100px;color:#000;}
