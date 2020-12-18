@@ -1,7 +1,13 @@
 @charset "UTF-8";
 
 #wrap {width:100%;background:#fff;}
-#wrap .circle-wrap {position:relative;width:100%;max-width:500px;height:auto;margin:100px auto;}
-#wrap .circle-wrap svg    {top:0;left:0;width:100%;height:auto;}
-#wrap .circle-wrap .front {position:relative;z-index:2;}
-#wrap .circle-wrap .bg    {position:absolute;z-index:1;}
+#wrap .circle-wrap {width:100%;max-width:500px;height:auto;margin:100px auto;}
+#wrap .circle-wrap .gap {margin:10%;}
+#wrap .circle-wrap .gap .title {padding-bottom:70%;text-align:center;}
+#wrap .circle-wrap .gap .title > h2 {display:inline-block;letter-spacing:1.5px;border-bottom:1px solid #bbb;font-size:40px;padding-bottom:5px;}
+#wrap .circle-wrap .gap .title > h2 > i {font-size:40px;color:#ea8;}
+#wrap .circle-wrap .gap .title > h2 > i:last-child {padding-left:20px;}
+#wrap .circle-wrap .gap .content {position:relative;width:100%;}
+#wrap .circle-wrap .gap .content > svg {position:absolute;top:0;left:0;width:100%;height:auto;}
+#wrap .circle-wrap .gap .content .front {z-index:2;}
+#wrap .circle-wrap .gap .content .bg {position:relative;z-index:1;opacity:0.05;}
